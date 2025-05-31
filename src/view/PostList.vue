@@ -54,7 +54,7 @@ const removePost = async (id) => {
     await deletePost(id);
     posts.value = posts.value.filter(post => post.id !== id);
     alert('Post eliminado');
-    // Refrescar la lista de posts después de eliminar
+   
   } catch (error) {
     console.error('Error deleting post:', error);
   }

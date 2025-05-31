@@ -46,7 +46,7 @@ const fetchPost = async (id) => {
 };
 
 const submitForm = async () => {
-    // Validar que los campos no estén vacíos
+    
     if (!form.value.title.trim() || !form.value.body.trim()) {
     alert('Por favor, completa todos los campos antes de guardar.');
     return;
