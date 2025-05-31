@@ -18,7 +18,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { createPost, getPostsById, updatePost } from '../services/postService'; // Asegúrate de que esta ruta sea correcta
+import { createPost, getPost, updatePost } from '../services/postService'; 
 
 const router = useRouter();
 const route = useRoute();
@@ -38,7 +38,7 @@ onMounted(() => {
 
 const fetchPost = async (id) => {
   try {
-    const response = await getPostsById(id);
+    const response = await getPosts(id);
     form.value = response.data;
   } catch (error) {
     console.error('Error fetching post:', error);

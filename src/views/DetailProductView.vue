@@ -20,7 +20,7 @@ export default {
   },
   mounted() {
     const id = this.$route.params.id;
-    getPost(id).then(data => {
+    getPosts(id).then(data => {
       this.product = data;
     });
   }

@@ -1,13 +1,9 @@
 import axios from 'axios';
-const API_URL = 'https://fakestoreapi.com/';
 
-export const getPosts = () => axios.get(API_URL)
-export const getPostsById = (id) => axios.get(`${API_URL}/${id}`);
+const API_URL = 'https://fakestoreapi.com/products';
+
+export const getPosts = () => axios.get(API_URL);
+export const getPost = (id) => axios.get(`${API_URL}/${id}`);
 export const createPost = (data) => axios.post(API_URL, data);
-export const updatePost = async (id, postData) => {
-  const response = await axios.put(`${API_URL}/products/${id}`, postData);
-  return response.data;
-};
-export const deletePost = async (id) => {
-  const response = await axios.delete(`${API_URL}/products/${id}`);
-  return response.data;};
+export const updatePost = (id, postData) => axios.put(`${API_URL}/${id}`, postData);
+export const deletePost = (id) => axios.delete(`${API_URL}/${id}`);
